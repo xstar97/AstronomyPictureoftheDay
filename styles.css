@@ -1,0 +1,30 @@
+body {
+  background-color: #000; /* Dark background color resembling space */
+  color: #fff; /* Text color */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.centered-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.centered-container {
+  text-align: center;
+}
+
+#currentDate {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+#imageContainer {
+  margin-top: 20px;
+}

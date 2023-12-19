@@ -1,0 +1,37 @@
+[
+  {
+    "title": "The Same Color Illusion",
+    "date": "2023-12-18",
+    "url": "https://apod.nasa.gov/apod/image/2312/greyillusion_wikipedia_960.jpg",
+    "explanation": "Are squares A and B the same color? They are! To verify this, either run your cursor over the image or click here to see them connected. The featured illusion, an example of the same color illusion, illustrates that purely human perceptions in science may be ambiguous or inaccurate, even such a seemingly direct perception as relative color. Similar illusions exist on the sky, such as the size of the Moon near the horizon, or the apparent shapes of astronomical objects. The advent of automated, reproducible measuring devices such as CCDs have made science in general and astronomy in particular less prone to, but not free of, human-biased illusions. APOD Year in Review (2023): RJN's Night Sky Network Lecture",
+    "copyright": "unknown"
+  },
+  {
+    "title": "Geminids over China's Nianhu Lake",
+    "date": "2023-12-17",
+    "url": "https://apod.nasa.gov/apod/image/2312/Geminids_Hongyang_1080.jpg",
+    "explanation": "Where are all of these meteors coming from? In terms of direction on the sky, the pointed answer is the constellation of Gemini. That is why the major meteor shower in December is known as the Geminids -- because shower meteors all appear to come from a radiant toward Gemini. Three dimensionally, however, sand-sized debris expelled from the unusual asteroid 3200 Phaethon follows a well-defined orbit about our Sun, and the part of the orbit that approaches Earth is superposed in front of the constellation of Gemini. Therefore, when Earth crosses this orbit, the radiant point of falling debris appears in Gemini. Featured here is a composite of many images taken a few days ago through dark skies from Nianhu Lake in China. Over 100 bright meteor streaks from the Geminids meteor shower are visible. APOD Year in Review (2023): RJN's Night Sky Network Lecture",
+    "copyright": "Hongyang Luo"
+  },
+  {
+    "title": "Crescent Enceladus",
+    "date": "2023-12-16",
+    "url": "https://apod.nasa.gov/apod/image/2312/PIA20522enceladus.jpg",
+    "explanation": "Peering from the shadows, the Saturn-facing hemisphere of tantalizing inner moon Enceladus poses in this Cassini spacecraft image. North is up in the dramatic scene captured during November 2016 as Cassini's camera was pointed in a nearly sunward direction about 130,000 kilometers from the moon's bright crescent. In fact, the distant world reflects over 90 percent of the sunlight it receives, giving its surface about the same reflectivity as fresh snow. A mere 500 kilometers in diameter, Enceladus is a surprisingly active moon. Data and images collected during Cassini's flybys have revealed water vapor and ice grains spewing from south polar geysers and evidence of an ocean of liquid water hidden beneath the moon's icy crust.",
+    "copyright": "unknown"
+  },
+  {
+    "title": "Betelgeuse Eclipsed",
+    "date": "2023-12-15",
+    "url": "https://apod.nasa.gov/apod/image/2312/OrionBetelgeuse_occultation.jpg",
+    "explanation": "Asteroid 319 Leona cast a shadow across planet Earth on December 12, as it passed in front of bright star Betelgeuse. But to see everyone's favorite red giant star fade this time, you had to stand near the center line of the narrow shadow path starting in central Mexico and extending eastward across southern Florida, the Atlantic Ocean, southern Europe, and Eurasia. The geocentric celestial event was captured in these two panels taken at Almodovar del Rio, Spain from before (left) and during the asteroid-star occultation. In both panels Betelgeuse is seen above and left, at the shoulder of the familiar constellation Orion. Its brightness diminishes noticeably during the exceedingly rare occultation when, for several seconds, the giant star was briefly eclipsed by a roughly 60 kilometer diameter main-belt asteroid.",
+    "copyright": "Sebastian Voltmer"
+  },
+  {
+    "title": "Supernova Remnant Cassiopeia A",
+    "date": "2023-12-14",
+    "url": "https://apod.nasa.gov/apod/image/2312/CasA_nircam_4096.jpg",
+    "explanation": "Massive stars in our Milky Way Galaxy live spectacular lives. Collapsing from vast cosmic clouds, their nuclear furnaces ignite and create heavy elements in their cores. After only a few million years for the most massive stars, the enriched material is blasted back into interstellar space where star formation can begin anew. The expanding debris cloud known as Cassiopeia A is an example of this final phase of the stellar life cycle. Light from the supernova explosion that created this remnant would have been first seen in planet Earth's sky about 350 years ago, although it took that light 11,000 years to reach us. This sharp NIRCam image from the James Webb Space Telescope shows the still hot filaments and knots in the supernova remnant. The whitish, smoke-like outer shell of the expanding blast wave is about 20 light-years across. Light echoes from the massive star's cataclysmic explosion are also identified in Webb's detailed image of supernova remnant Cassiopeia A. Tonight watch: The Geminids",
+    "copyright": "unknown"
+  }
+]
