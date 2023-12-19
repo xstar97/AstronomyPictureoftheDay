@@ -11,12 +11,12 @@ if (currentDateParam) {
     // If the parsed date is valid, use it
     currentDateName = currentDateParam;
   } else {
-    // If the parsed date is invalid, fallback to the current date
-    currentDateName = getDefaultDate();
+    // If the parsed date is invalid, fallback to the first item in the data array
+    currentDateName = useDefaultDate();
   }
 } else {
   // If no query parameter is provided, use the current date
-  currentDateName = getDefaultDate();
+  currentDateName = useDefaultDate();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -28,7 +28,7 @@ function validateDateFormat(dateString) {
   return dateRegex.test(dateString);
 }
 
-function getDefaultDate() {
+function useDefaultDate() {
   const currentDate = new Date();
   const year = currentDate.getFullYear();
   const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
@@ -43,11 +43,11 @@ function loadImages() {
       const imageContainer = document.getElementById('imageContainer');
       console.log("date: " + currentDateName);
 
-      // Find the image for the current date or the last known date
+      // Find the image for the current date or use the first item if not found
       const matchingImage = data.find(image => {
         const imageDate = new Date(image.date + 'T00:00:00Z'); // UTC version of the image date
         return imageDate.toISOString().split('T')[0] === currentDateName;
-      }) || data[data.length - 1];
+      }) || data[0];
 
       // Display the matching image
       const img = document.createElement('img');
