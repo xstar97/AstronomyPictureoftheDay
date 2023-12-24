@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Show loading view
+  const loadingView = document.getElementById('loading');
+  loadingView.style.display = 'block';
+
   const today = new Date();
   const dd = String(today.getDate()).padStart(2, '0');
   const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
@@ -18,9 +22,18 @@ document.addEventListener('DOMContentLoaded', function () {
   fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
+          // Hide loading view and show content view
+          loadingView.style.display = 'none';
+          const contentView = document.getElementById('content');
+          contentView.style.display = 'block';
+
           updateUI(data);
       })
-      .catch(error => console.error('Error fetching data:', error));
+      .catch(error => {
+          console.error('Error fetching data:', error);
+          // Handle error and hide loading view
+          loadingView.style.display = 'none';
+      });
 });
 
 function updateUI(data) {

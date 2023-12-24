@@ -8,11 +8,19 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="title"></h1>
-        <p id="date"></p>
-        <p id="description"></p>
-        <img id="image" src="" alt="Astronomy Picture of the Day">
-        <p id="copyright"></p>
+        <!-- Loading view -->
+        <div id="loading" class="loading-view">
+            <p>Loading...</p>
+        </div>
+
+        <!-- Content view -->
+        <div id="content" style="display: none;">
+            <h1 id="title"></h1>
+            <p id="date"></p>
+            <p id="description"></p>
+            <img id="image" src="" alt="Astronomy Picture of the Day">
+            <p id="copyright"></p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

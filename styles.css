@@ -23,3 +23,15 @@ img {
 #copyright {
   font-style: italic;
 }
+
+.loading-view {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+/* Add styles for the content view */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
