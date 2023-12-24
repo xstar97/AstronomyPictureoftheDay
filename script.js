@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  // Uncomment the next line to use the API endpoint
   fetchData(requestedDate);
 
   function fetchData(requestedDate) {
