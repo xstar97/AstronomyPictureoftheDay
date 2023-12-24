@@ -34,6 +34,39 @@ document.addEventListener('DOMContentLoaded', function () {
           // Handle error and hide loading view
           loadingView.style.display = 'none';
       });
+
+  const dateSelector = document.getElementById('dateSelector');
+  const calendarIcon = document.getElementById('calendarIcon');
+
+  // Show the date selector when the calendar icon is clicked
+  calendarIcon.addEventListener('click', function () {
+      dateSelector.style.display = 'block';
+  });
+
+  // Initialize the date picker
+  flatpickr(dateSelector, {
+      dateFormat: 'Y-m-d',
+      defaultDate: requestedDate,
+      onClose: function (selectedDates, dateStr) {
+          // Hide the date selector after a date is picked
+          dateSelector.style.display = 'none';
+
+          // Update the URL and fetch data with the selected date
+          const selectedDate = dateStr || defaultDate;
+          window.history.replaceState({}, document.title, `?date=${selectedDate}`);
+          const apiUrl = `https://worker.apd.xstar97thenoob.com?date=${selectedDate}`;
+          fetch(apiUrl)
+              .then(response => response.json())
+              .then(data => {
+                  // Update UI with new data
+                  updateUI(data);
+              })
+              .catch(error => {
+                  console.error('Error fetching data:', error);
+                  // Handle error
+              });
+      },
+  });
 });
 
 function updateUI(data) {
