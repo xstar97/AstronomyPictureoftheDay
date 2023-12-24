@@ -1,67 +1,38 @@
-// Display the current date in the desired format (YYYY-MM-DD)
-const currentDateElement = document.getElementById('currentDate');
-const queryParams = new URLSearchParams(window.location.search);
-const currentDateParam = queryParams.get('date');
-let currentDateName;
-
-if (currentDateParam) {
-  const isValidDate = validateDateFormat(currentDateParam);
-
-  if (isValidDate) {
-    // If the parsed date is valid, use it
-    currentDateName = currentDateParam;
-  } else {
-    // If the parsed date is invalid, fallback to the first item in the data array
-    currentDateName = useDefaultDate();
-  }
-} else {
-  // If no query parameter is provided, use the current date
-  currentDateName = useDefaultDate();
-}
-
 document.addEventListener('DOMContentLoaded', function () {
-  loadImages();
+  const today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+  const yyyy = today.getFullYear();
+  const defaultDate = yyyy + '-' + mm + '-' + dd;
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const requestedDate = urlParams.get('date') || defaultDate;
+
+  // Append the default query date as today's date if no date is provided
+  if (!urlParams.has('date')) {
+      window.history.replaceState({}, document.title, `?date=${defaultDate}`);
+  }
+
+  // Uncomment the next line to use the API endpoint
+  const apiUrl = `https://apd.xstar97thenoob.workers.dev/?date=${requestedDate}`;
+  fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+          updateUI(data);
+      })
+      .catch(error => console.error('Error fetching data:', error));
 });
 
-function validateDateFormat(dateString) {
-  const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
-  return dateRegex.test(dateString);
-}
+function updateUI(data) {
+  document.getElementById('title').innerText = data.title;
+  document.getElementById('date').innerText = data.date;
+  document.getElementById('description').innerText = data.explanation;
+  document.getElementById('image').src = data.url;
 
-function useDefaultDate() {
-  const currentDate = new Date();
-  const year = currentDate.getFullYear();
-  const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-  const day = currentDate.getDate().toString().padStart(2, '0');
-  return `${year}-${month}-${day}`;
-}
-
-function loadImages() {
-  fetch('./data.json')
-    .then(response => response.json())
-    .then(data => {
-      const imageContainer = document.getElementById('imageContainer');
-      console.log("date: " + currentDateName);
-
-      // Find the image for the current date or use the first item if not found
-      const matchingImage = data.find(image => {
-        const imageDate = new Date(image.date + 'T00:00:00Z'); // UTC version of the image date
-        return imageDate.toISOString().split('T')[0] === currentDateName;
-      }) || data[0];
-
-      // Display the matching image
-      const img = document.createElement('img');
-      img.src = matchingImage.url;
-      img.alt = matchingImage.title;
-      imageContainer.appendChild(img);
-
-      // Display image details
-      const details = document.createElement('div');
-      details.innerHTML = `<p><strong>${matchingImage.title}</strong></p>
-                            <p>${matchingImage.date}</p>
-                            <p>${matchingImage.explanation}</p>
-                            <p>Copyright: ${matchingImage.copyright}</p>`;
-      imageContainer.appendChild(details);
-    })
-    .catch(error => console.error('Error loading images:', error));
+  const copyrightElement = document.getElementById('copyright');
+  if (data.hasOwnProperty('copyright') && data.copyright) {
+      copyrightElement.innerText = 'Copyright: ' + data.copyright;
+  } else {
+      copyrightElement.style.display = 'none'; // Hide copyright element
+  }
 }
