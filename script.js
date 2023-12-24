@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Uncomment the next line to use the API endpoint
-  const apiUrl = `https://apd.xstar97thenoob.workers.dev/?date=${requestedDate}`;
+  const apiUrl = `https://worker.apd.xstar97thenoob.com/?date=${requestedDate}`;
   fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
