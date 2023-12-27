@@ -4,24 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astronomy Picture of the Day</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Loading view -->
-        <div id="loading" class="loading-view">
-            <p>Loading...</p>
-        </div>
+    <h1>NASA's APOD List</h1>
 
-        <!-- Content view -->
-        <div id="content" style="display: none;">
-            <h1 id="title"></h1>
-            <p id="date"></p>
-            <p id="description"></p>
-            <img id="image" src="" alt="Astronomy Picture of the Day">
-            <p id="copyright"></p>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <div id="todayView" class="date-item"></div>
+
+    <div class="date-grid" id="dateGrid"></div>
+
+    <script src="scripts/index.js"></script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+/* css/index.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.date-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+.date-item {
+    border: 1px solid #ffffff;
+    padding: 10px;
+    cursor: pointer;
+    color: rgb(243, 242, 242); /* Set the default text color */
+}
+
+.date-item:hover {
+    background-color: rgb(255, 255, 255);
+    color: black; /* Set the text color when hovered */
+}
