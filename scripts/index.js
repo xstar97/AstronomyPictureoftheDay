@@ -40,7 +40,7 @@ function loadItem(requestedDate) {
             // Load item_apod.html if the date is valid
             const itemContainer = document.getElementById('itemContainer');
             const itemScript = document.createElement('script');
-            itemScript.src = 'item.js';
+            itemScript.src = '/scripts/item.js';
             itemScript.onload = function () {
                 updateUI(data);
                 // Replace the current page with item_apod.html
