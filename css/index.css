@@ -7,23 +7,40 @@ body {
     background-color: black;
     color: white;
     font-family: 'Arial', sans-serif;
+    height: 100vh; /* Ensure the body takes the full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items vertically */
 }
 
-.date-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-gap: 10px;
-    justify-content: center;
+h1 {
+    margin-bottom: 20px; /* Add margin below the title */
 }
 
-.date-item {
-    border: 1px solid #ffffff;
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
     padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
     cursor: pointer;
-    color: rgb(243, 242, 242); /* Set the default text color */
 }
 
-.date-item:hover {
-    background-color: rgb(255, 255, 255);
-    color: black; /* Set the text color when hovered */
+button:hover {
+    background-color: #0056b3;
 }
